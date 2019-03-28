@@ -56,6 +56,34 @@ model.fit(data, labels)  # starts training
 ## Layers ##
 Models are built up from layers. Keras layers have common methods `.get_weights()` that returns the weights of a layer as a list of Numpy arrays, `.set_weights(weights)` sets weights of a layer from a list of Numpy arrays with same shapes as the output of get_weights, `.get_config()` returns a dictionary containing the configuration of the layer. A layer can be reinstantiated from its config.
 
+## Core Layers ##
+
+### Dense ###
+A densely-connected NN layer - [Documentation](https://keras.io/layers/core/#dense)
+```
+keras.layers.Dense(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+```
+
+### Activation ###
+Applies activation function to an output.
+
+### Dropout ###
+Dropout can help prevent overfitting and provides a way of approximately combining exponentially many different neural network architectures efficiently. [Dropout: A Simple Way to Prevent Neural Networks from Overfitting by N. Srivastava](http://www.jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf). "dropout" refers to dropping out units in a neural network, by temporarily removing it from the network along with all its incoming and out-going connections.
+
+### Flatten ###
+Flatten the input. (More information needed)
+
+### Input ###
+(More information needed)
+
+### Reshape ###
+Reshape the output to a certain shape. This could be useful to change shape from a 1D tensor layer to a 2D tensor layer.
+
+### Permute ###
+Permute the dimensions of the input to a given pattern. Useful for connecting RNNs and convnets.
+
+## Other Layers ##
+
 ## Convolutional Layers ##
 Convolutional layers apply a convolution operation on input and pass results to the next layer. (What is a convolution?)
 
@@ -80,12 +108,6 @@ Pooling layers reduce dimensions of data by combining outputs of neuron clusters
 
 ## Fully connected ##
 Fully connected layers connect every neuron in one layer to every neuron in another layer.
-
-### Dense ###
-A densely-connected NN layer - [Documentation](https://keras.io/layers/core/#dense)
-```
-keras.layers.Dense(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
-```
 
 ### ReLU layers in Neural Networks ###
 ReLU function is f(x) = max(0, x). ReLUs can speed up training where the gradient computation is 0 or 1 depending on the sign of x. It comes at a cost with the 0 gradient on the left-hand side creating "dead neurons".
@@ -120,5 +142,4 @@ Using a CNN to understand image features and generate an image [Link to example 
 - ["GAN by example using Keras on Tensorflow"](https://towardsdatascience.com/gan-by-example-using-keras-on-tensorflow-backend-1a6d515a60d0)
 - ["Creating AutoEncoders in Keras and generating images with VAE"](https://github.com/chaitanya100100/VAE-for-Image-Generation)
 - ["Generative Adverserial Networks in Deblurring"](https://blog.sicara.com/keras-generative-adversarial-networks-image-deblurring-45e3ab6977b5)
-
 - ["Building Autoencoders in Keras"](https://blog.keras.io/building-autoencoders-in-keras.html)
